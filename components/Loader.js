@@ -1,59 +1,47 @@
 'use client'
 
-import { useEffect, useRef, useCallback } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useState } from 'react'
+import styles from '@/styles/Loader.module.css'
 
 const GREETINGS = [
   'Hello',
-  'Hola',
+  'Kumusta',
   'Bonjour',
+  'Hola',
   'Ciao',
   'Hallo',
+  'Olá',
   'こんにちは',
   '안녕하세요',
   '你好',
-  'Kumusta',
-  'Olá',
 ]
 
-const HOLD_MS     = 230
-const FADE_IN_MS  = 100
-const FADE_OUT_MS = 110
-const GAP_MS      = 16
-const SEEN_KEY    = 'aaa-intro-seen'
+const HOLD_MS     = 180
+const FADE_IN_MS  = 80
+const FADE_OUT_MS = 80
+const GAP_MS      = 10
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
 export default function Loader({ onComplete }) {
-  const [visible, setVisible]   = useState(true)
-  const [word, setWord]         = useState('')
-  const [wordOn, setWordOn]     = useState(false)
+  const [visible, setVisible] = useState(true)
+  const [word, setWord] = useState(GREETINGS[0])
+  const [wordOn, setWordOn] = useState(true)
   const didRun = useRef(false)
 
   const runSequence = useCallback(async () => {
-    // Skip if already seen this session
-    if (typeof window !== 'undefined' && sessionStorage.getItem(SEEN_KEY)) {
-      setVisible(false)
-      onComplete?.()
-      return
-    }
-
-    for (const greeting of GREETINGS) {
-      setWord(greeting)
+    for (let i = 0; i < GREETINGS.length; i++) {
+      setWord(GREETINGS[i])
       setWordOn(true)
       await sleep(FADE_IN_MS + HOLD_MS)
       setWordOn(false)
       await sleep(FADE_OUT_MS + GAP_MS)
     }
 
-    if (typeof window !== 'undefined') {
-      sessionStorage.setItem(SEEN_KEY, '1')
-    }
-
-    // Trigger exit animation, then unmount
+    // Trigger exit animation, then inform parent
     setVisible(false)
-    await sleep(500) // match exit duration
+    await sleep(450)
     onComplete?.()
   }, [onComplete])
 
@@ -67,19 +55,19 @@ export default function Loader({ onComplete }) {
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="loader"
+          className={styles.loader}
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.45, ease: 'easeInOut' }}
+          exit={{ opacity: 0, transition: { duration: 0.5, ease: 'easeInOut' } }}
           aria-live="polite"
           role="status"
           aria-label="Loading portfolio"
         >
           <span
-            className="loader__word"
+            className={styles.word}
             style={{
               opacity: wordOn ? 1 : 0,
-              transition: `opacity ${FADE_IN_MS}ms ease`,
+              transform: wordOn ? 'scale(1)' : 'scale(0.96)',
+              transition: `opacity ${FADE_IN_MS}ms ease, transform ${FADE_IN_MS}ms ease`,
             }}
           >
             {word}

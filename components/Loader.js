@@ -19,16 +19,49 @@ const GREETINGS = [
   'Kumusta',     // Filipino
 ]
 
+let hasPlayedIntroMemory = false
+
+export function hasIntroPlayed() {
+  if (hasPlayedIntroMemory) return true
+  if (typeof window !== 'undefined') {
+    try {
+      if (sessionStorage.getItem('gelo_intro_done')) {
+        hasPlayedIntroMemory = true
+        return true
+      }
+    } catch {}
+  }
+  return false
+}
+
+export function markIntroPlayed() {
+  hasPlayedIntroMemory = true
+  if (typeof window !== 'undefined') {
+    try {
+      sessionStorage.setItem('gelo_intro_done', '1')
+    } catch {}
+  }
+}
+
 export default function Loader({ onComplete }) {
+  const [isMounted, setIsMounted] = useState(false)
   const [index, setIndex] = useState(0)
   const [isExiting, setIsExiting] = useState(false)
-  const [isMounted, setIsMounted] = useState(true)
   const [hasHydrated, setHasHydrated] = useState(false)
 
   useEffect(() => {
     setHasHydrated(true)
 
-    // Cycle through greetings every 200ms
+    // If already played once, do not trigger again when returning to home
+    if (hasIntroPlayed()) {
+      setIsMounted(false)
+      onComplete?.()
+      return
+    }
+
+    // First time loading: show loader and cycle through greetings
+    setIsMounted(true)
+
     const interval = setInterval(() => {
       setIndex((prev) => {
         if (prev < GREETINGS.length - 1) {
@@ -37,6 +70,7 @@ export default function Loader({ onComplete }) {
           clearInterval(interval)
           // Initiate exit fade
           setIsExiting(true)
+          markIntroPlayed()
           setTimeout(() => {
             setIsMounted(false)
             onComplete?.()
@@ -93,6 +127,5 @@ export default function Loader({ onComplete }) {
     return createPortal(loaderContent, document.body)
   }
 
-  // Initial SSR render
   return loaderContent
 }

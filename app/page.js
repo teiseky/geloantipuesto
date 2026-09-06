@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import gsap from 'gsap'
-import Loader from '@/components/Loader'
+import Loader, { hasIntroPlayed } from '@/components/Loader'
 import ScrollReveal from '@/components/ScrollReveal'
 import styles from '@/styles/Hero.module.css'
 import home from '@/styles/Home.module.css'
@@ -14,6 +14,13 @@ export default function HomePage() {
   const leftRef = useRef(null)
   const rightRef = useRef(null)
   const pillarsRef = useRef(null)
+
+  // Immediately make hero active if loader already played once
+  useEffect(() => {
+    if (hasIntroPlayed()) {
+      setLoaderDone(true)
+    }
+  }, [])
 
   // Fire GSAP hero stagger after loader exits
   useEffect(() => {

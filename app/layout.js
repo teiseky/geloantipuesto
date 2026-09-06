@@ -18,6 +18,13 @@ export const metadata = {
   },
   description:
     'Angelo Andrei Antipuesto is a Development Communicator from the University of the Philippines Los Baños, working across storytelling, media production, advocacy, and community engagement.',
+  icons: {
+    icon: [
+      { url: '/tab-icon.png', type: 'image/png' },
+    ],
+    shortcut: '/tab-icon.png',
+    apple: '/tab-icon.png',
+  },
   openGraph: {
     title: 'Angelo Andrei Antipuesto — Development Communicator',
     description:

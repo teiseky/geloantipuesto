@@ -4,8 +4,6 @@ import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 const GREETINGS = [
-  'Hello',
-  'Kumusta',
   'Bonjour',
   'Hola',
   'Ciao',
@@ -14,6 +12,11 @@ const GREETINGS = [
   'こんにちは',
   '안녕하세요',
   '你好',
+  'Halo',        // Indonesian
+  'Selamat',     // Malaysian
+  'Hello lah',   // Singaporean
+  'Hello',
+  'Kumusta',     // Filipino
 ]
 
 export default function Loader({ onComplete }) {
@@ -37,7 +40,7 @@ export default function Loader({ onComplete }) {
           setTimeout(() => {
             setIsMounted(false)
             onComplete?.()
-          }, 600)
+          }, 800)
           return prev
         }
       })
@@ -70,38 +73,18 @@ export default function Loader({ onComplete }) {
       role="status"
       aria-label="Loading portfolio"
     >
-      <div
+      <span
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '0.85rem',
+          fontSize: 'clamp(2.5rem, 6.5vw, 5.5rem)',
+          fontWeight: 500,
+          letterSpacing: '-0.03em',
+          color: '#FFFFFF',
+          lineHeight: 1,
+          textAlign: 'center',
         }}
       >
-        <span
-          style={{
-            display: 'inline-block',
-            width: '10px',
-            height: '10px',
-            borderRadius: '50%',
-            backgroundColor: '#9E1B32',
-            flexShrink: 0,
-          }}
-          aria-hidden="true"
-        />
-        <span
-          style={{
-            fontSize: 'clamp(2.5rem, 6.5vw, 5.5rem)',
-            fontWeight: 500,
-            letterSpacing: '-0.03em',
-            color: '#FFFFFF',
-            lineHeight: 1,
-            textAlign: 'center',
-          }}
-        >
-          {GREETINGS[index]}
-        </span>
-      </div>
+        {GREETINGS[index]}
+      </span>
     </div>
   )
 

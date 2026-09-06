@@ -40,6 +40,39 @@
   margin-top: var(--sp-5);
 }
 
+.resumeAction {
+  margin-top: var(--sp-6);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  background: var(--accent);
+  color: #FFFFFF;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 0.75rem 1.4rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color var(--t-1) ease, transform var(--t-1) ease, box-shadow var(--t-1) ease;
+  box-shadow: 0 4px 16px rgba(158, 27, 50, 0.35);
+}
+
+.downloadBtn:hover {
+  background: var(--accent-hover, #BF2845);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(158, 27, 50, 0.5);
+  color: #FFFFFF;
+}
+
+.downloadBtn svg {
+  flex-shrink: 0;
+}
+
 .photo {
   position: sticky;
   top: calc(var(--nav-h) + var(--sp-5));

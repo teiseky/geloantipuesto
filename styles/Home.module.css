@@ -1,0 +1,343 @@
+/* Home.module.css */
+
+/* ── Section Shell ──────────────────────────────────── */
+
+.section {
+  padding-block: var(--sp-10) var(--sp-9);
+}
+
+.sectionHeader {
+  margin-bottom: var(--sp-9);
+}
+
+.sectionTag {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--sp-2);
+}
+
+.sectionTitle {
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: #FFFFFF;
+  margin-bottom: var(--sp-3);
+}
+
+.sectionDesc {
+  font-size: 1.0625rem;
+  color: var(--ink-muted);
+  max-width: 65ch;
+  line-height: 1.68;
+}
+
+/* ── Project List & Cards ────────────────────────────── */
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-10);
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--sp-9);
+  border-bottom: 1px solid var(--stone);
+}
+
+.projectCard:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cardHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--sp-6);
+  margin-bottom: var(--sp-6);
+}
+
+.cardLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.roleBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  line-height: 1.15;
+}
+
+.cardLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  padding-top: var(--sp-2);
+}
+
+.chipLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  background: var(--paper-alt);
+  border: 1px solid var(--stone);
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  transition: background var(--t-1) ease, border-color var(--t-1) ease, transform var(--t-1) ease;
+}
+
+.chipLink:hover {
+  background: #1C1C22;
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.chipIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chipSpotify:hover {
+  border-color: #1DB954;
+  color: #FFFFFF;
+}
+
+.chipFacebook:hover {
+  border-color: #1877F2;
+  color: #FFFFFF;
+}
+
+/* ── Image Placeholders & Galleries ─────────────────── */
+
+.gallery3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+  align-items: start;
+}
+
+.gallery6 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+  align-items: start;
+}
+
+.galleryVertical {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+  align-items: start;
+}
+
+.imageFrame {
+  position: relative;
+  background: #101014;
+  border: 1px solid var(--stone);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--t-2) ease, transform var(--t-2) ease, box-shadow var(--t-2) ease;
+}
+
+.imageFrame:hover {
+  border-color: rgba(158, 27, 50, 0.55);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.projectImg {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.imageFrame:hover .projectImg {
+  transform: scale(1.015);
+}
+
+.phSlot {
+  position: relative;
+  background: #141418;
+  border: 1px solid var(--stone);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: border-color var(--t-2) ease, background var(--t-2) ease, transform var(--t-2) ease;
+  user-select: none;
+}
+
+.phSlot:hover {
+  border-color: rgba(158, 27, 50, 0.45);
+  background: #18181E;
+}
+
+.phWide {
+  aspect-ratio: 16 / 10;
+}
+
+.phTall {
+  aspect-ratio: 3 / 4;
+}
+
+.ph--16-10 {
+  aspect-ratio: 16 / 10;
+}
+
+.ph--4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.ph--3-4 {
+  aspect-ratio: 3 / 4;
+}
+
+.ph--1-1 {
+  aspect-ratio: 1 / 1;
+}
+
+.phIcon {
+  color: var(--ink-quiet);
+  opacity: 0.6;
+}
+
+.phLabel {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.phSub {
+  font-size: 0.625rem;
+  color: var(--ink-quiet);
+  letter-spacing: 0.04em;
+}
+
+/* ── Section 8: Multimedia & Media-Based Learning ────── */
+
+.mmGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-7);
+}
+
+.mmCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  background: var(--paper-alt);
+  border: 1px solid var(--stone);
+  border-radius: 8px;
+  padding: var(--sp-6);
+  transition: border-color var(--t-2) ease;
+}
+
+.mmCard:hover {
+  border-color: rgba(158, 27, 50, 0.4);
+}
+
+.mmHead {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.mmRole {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.mmTitle {
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+
+@media (max-width: 960px) {
+  .cardHead {
+    flex-direction: column;
+    gap: var(--sp-4);
+  }
+
+  .gallery3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery6 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .galleryVertical {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mmGrid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery3 {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+
+  .gallery6 {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+
+  .galleryVertical {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+
+  .mmCard {
+    padding: var(--sp-4);
+  }
+}

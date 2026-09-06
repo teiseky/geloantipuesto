@@ -1,0 +1,24 @@
+/* Loader.module.css — referenced via globals */
+
+:global(.loader) {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+}
+
+:global(.loader__word) {
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  user-select: none;
+  will-change: opacity;
+  min-width: 12ch;
+  text-align: center;
+  line-height: 1;
+}

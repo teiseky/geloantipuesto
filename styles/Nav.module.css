@@ -1,0 +1,131 @@
+/* Nav.module.css */
+
+.nav {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 200;
+  height: var(--nav-h);
+  background: transparent;
+  border-bottom: none;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.brand {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: opacity var(--t-1) ease;
+}
+
+.brand:hover {
+  opacity: 0.85;
+}
+
+.brandDot {
+  color: var(--accent);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+}
+
+.link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  opacity: 0.85;
+  transition: opacity var(--t-1) ease, color var(--t-1) ease;
+  position: relative;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+}
+
+.link:hover {
+  opacity: 1;
+  color: #FFFFFF;
+}
+
+.linkActive {
+  opacity: 1;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.linkActive::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  inset-inline: 0;
+  height: 1px;
+  background: var(--accent);
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FFFFFF;
+  color: #0A0A0C;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.38rem 0.45rem 0.38rem 1.15rem;
+  border-radius: 9999px;
+  transition: transform var(--t-2) ease, background var(--t-2) ease, box-shadow var(--t-2) ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.ctaBtn:hover {
+  transform: translateY(-1px);
+  background: #F4F4F6;
+  box-shadow: 0 6px 20px rgba(158, 27, 50, 0.3);
+}
+
+.ctaArrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  background: var(--accent);
+  color: #FFFFFF;
+  border-radius: 50%;
+  transition: transform var(--t-2) ease;
+}
+
+.ctaBtn:hover .ctaArrow {
+  transform: rotate(45deg);
+}
+
+@media (max-width: 640px) {
+  .links {
+    gap: var(--sp-4);
+  }
+
+  .ctaBtn span:first-child {
+    display: none;
+  }
+
+  .ctaBtn {
+    padding: 0.3rem;
+  }
+}

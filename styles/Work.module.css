@@ -1,0 +1,286 @@
+/* Work.module.css */
+
+/* ── Page Header ────────────────────────────────── */
+
+.pageHd {
+  padding-block: var(--sp-10) var(--sp-8);
+  margin-bottom: var(--sp-8);
+}
+
+.pageTitle {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #FFFFFF;
+  margin-bottom: var(--sp-3);
+}
+
+.pageDesc {
+  font-size: 1.0625rem;
+  color: var(--ink-muted);
+  max-width: 62ch;
+  line-height: 1.7;
+}
+
+/* ── Section Dividers & Headers ─────────────────── */
+
+.sectionHeader {
+  margin-bottom: var(--sp-8);
+}
+
+.sectionTag {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--sp-2);
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  line-height: 1.15;
+}
+
+/* ── Alternating Side-by-Side Works (With Canva Embed) ── */
+
+.sideList {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--sp-10);
+}
+
+.sideBySide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-9);
+  align-items: center;
+  padding-block: var(--sp-9);
+}
+
+/* Alternate Layout: reverse items place text on left, embed on right */
+.sideBySideReverse .embedCol {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.sideBySideReverse .textCol {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.embedCol {
+  width: 100%;
+}
+
+.embedWrapper,
+.mediaWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  min-height: 440px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.embedIframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.workImg {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  display: block;
+}
+
+.textCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.categoryLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.roleTag {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink-quiet);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.itemTitle {
+  font-size: clamp(1.75rem, 2.6vw, 2.5rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.itemDesc {
+  font-size: 1.0625rem;
+  color: var(--ink-muted);
+  line-height: 1.78;
+  max-width: 60ch;
+}
+
+/* ── Links & Buttons ────────────────────────────── */
+
+.actionRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  margin-top: var(--sp-2);
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: var(--paper-alt);
+  border: 1px solid var(--stone);
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  transition: background var(--t-1) ease, border-color var(--t-1) ease, transform var(--t-1) ease, box-shadow var(--t-1) ease;
+  text-decoration: none;
+}
+
+.actionBtn:hover {
+  background: #202028;
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(158, 27, 50, 0.25);
+}
+
+.btnCanva {
+  border-color: rgba(0, 196, 204, 0.3);
+}
+
+.btnCanva:hover {
+  border-color: #00C4CC;
+  box-shadow: 0 4px 14px rgba(0, 196, 204, 0.25);
+}
+
+.btnDrive {
+  border-color: rgba(66, 133, 244, 0.3);
+}
+
+.btnDrive:hover {
+  border-color: #4285F4;
+  box-shadow: 0 4px 14px rgba(66, 133, 244, 0.25);
+}
+
+/* ── Bottom Section: Projects Without Canva Embed ── */
+
+.bottomSection {
+  padding-block: var(--sp-10) var(--sp-9);
+}
+
+.bottomGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-8);
+}
+
+.simpleCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.simpleCardHead {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: var(--sp-4);
+}
+
+.simpleCardRole {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.simpleCardTitle {
+  font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.simpleCardDesc {
+  font-size: 0.9375rem;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  margin-bottom: var(--sp-5);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+
+@media (max-width: 960px) {
+  .sideBySide {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+    padding-block: var(--sp-7);
+  }
+
+  .sideBySideReverse .embedCol {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .sideBySideReverse .textCol {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .bottomGrid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .embedWrapper {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 600px) {
+  .embedWrapper {
+    min-height: 280px;
+    aspect-ratio: 16 / 10;
+  }
+}

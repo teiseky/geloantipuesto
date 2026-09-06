@@ -1,0 +1,161 @@
+/* About.module.css */
+
+/* ── Page Header ────────────────────────────────── */
+
+.pageHd {
+  padding-block: var(--sp-9) var(--sp-7);
+  margin-bottom: var(--sp-8);
+}
+
+.pageTitle {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--ink);
+}
+
+/* ── Bio Split ──────────────────────────────────── */
+
+.section {
+  padding-block: var(--sp-7);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: var(--sp-8);
+  align-items: start;
+  margin-bottom: var(--sp-8);
+}
+
+.bio p {
+  font-size: 1.0625rem;
+  color: var(--ink-muted);
+  line-height: 1.78;
+  max-width: 60ch;
+}
+
+.bio p + p {
+  margin-top: var(--sp-5);
+}
+
+.photo {
+  position: sticky;
+  top: calc(var(--nav-h) + var(--sp-5));
+  align-self: start;
+  border-radius: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.portraitImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.photo:hover .portraitImg {
+  transform: scale(1.02);
+}
+
+/* ── Domains ────────────────────────────────────── */
+
+.domains {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-8);
+  padding-block: var(--sp-8);
+  margin-bottom: var(--sp-7);
+}
+
+.domainLabel {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--ink-quiet);
+  margin-bottom: var(--sp-5);
+}
+
+.domainItems {
+  display: flex;
+  flex-direction: column;
+}
+
+.domainItem {
+  font-size: 1rem;
+  color: var(--ink-muted);
+  padding-block: var(--sp-3);
+  line-height: 1.4;
+}
+
+.domainItem:last-child {
+  border-bottom: none;
+}
+
+/* ── Education ──────────────────────────────────── */
+
+.education {
+  padding-block: var(--sp-7) 0;
+}
+
+.educationEntry {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: var(--sp-6);
+  align-items: start;
+}
+
+.educationSchool {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--ink-quiet);
+  padding-top: 0.3rem;
+}
+
+.educationDegree {
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: var(--sp-2);
+}
+
+.educationProgram {
+  font-size: 0.9375rem;
+  color: var(--ink-muted);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+
+@media (max-width: 960px) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+
+  .photo {
+    position: static;
+    order: -1;
+    max-width: 300px;
+  }
+
+  .domains {
+    grid-template-columns: 1fr;
+    gap: var(--sp-7);
+  }
+
+  .educationEntry {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+}
+
+@media (max-width: 440px) {
+  .pageHd {
+    padding-block: var(--sp-7) var(--sp-6);
+  }
+}

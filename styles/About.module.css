@@ -132,6 +132,9 @@
 
 .education {
   padding-block: var(--sp-7) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-7);
 }
 
 .educationEntry {
@@ -147,6 +150,12 @@
   letter-spacing: 0.01em;
   color: var(--ink-quiet);
   padding-top: 0.3rem;
+}
+
+.educationDate {
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+  margin-top: var(--sp-1);
 }
 
 .educationDegree {

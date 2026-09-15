@@ -16,7 +16,7 @@ All requested updates have been applied:
 - **Edukatarungan: Module & Video Series (DEVC 145)**: Embed on Left, Text on Right.
 - **CDC Survival Kit for Freshies**: Text on Left, Embed on Right.
 - **Sukól: 44th KASAMA sa UP National Congress Booklet (Co-Writer, 2023)**:
-  - **New Canva Embed**: `https://www.canva.com/design/DAGlFmpJviM/51A_cvmjrWzT9rqmsCb0XA/view?embed`
+  - **New Canva Link & Embed**: `https://canva.link/urv44up7d6hbrjr` (`https://www.canva.com/design/DAHUsmghAoM/e6HFP_2FJudi7NZ_pvka5w/view?embed`)
   - Embed on Left, Text on Right.
 - **Tambalang Kambal: Ahunan Dam Controversy**: Text on Left, Embed on Right.
 

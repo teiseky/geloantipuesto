@@ -119,6 +119,20 @@ export default function AboutPage() {
             <div className={styles.educationEntry}>
               <div>
                 <p className={styles.educationSchool}>
+                  Asia Pacific Institute of International Studies
+                </p>
+                <p className={styles.educationDate}>January 2026 – Present</p>
+              </div>
+              <div>
+                <p className={styles.educationDegree}>
+                  Masters of Ministry
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.educationEntry}>
+              <div>
+                <p className={styles.educationSchool}>
                   University of the Philippines Los Baños
                 </p>
               </div>

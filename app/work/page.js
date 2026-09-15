@@ -103,11 +103,11 @@ const CANVA_PROJECTS = [
     category: 'Notable Projects and Writings',
     role: 'Deputy Secretary-General for Education and Research',
     desc: 'As Deputy Secretary-General for Education and Research, I co-wrote the official congress booklet for Sukól, the 44th KASAMA sa UP National Congress. The publication featured critical resolutions, historical context, and thematic discussions that shaped student governance dialogues across the UP system, highlighting collective resistance, unity, and progressive student leadership.',
-    canvaEmbed: 'https://www.canva.com/design/DAGlFmpJviM/51A_cvmjrWzT9rqmsCb0XA/view?embed',
+    canvaEmbed: 'https://www.canva.com/design/DAHUsmghAoM/e6HFP_2FJudi7NZ_pvka5w/view?embed',
     links: [
       {
         label: 'Open in Canva ↗',
-        href: 'https://www.canva.com/design/DAGlFmpJviM/51A_cvmjrWzT9rqmsCb0XA/view',
+        href: 'https://canva.link/urv44up7d6hbrjr',
         type: 'canva',
       },
     ],
